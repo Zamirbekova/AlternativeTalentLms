@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>edit student</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/student/{id}/edit (id=${modelEditStudent.getId()})}"
+      th:object="${modelEditStudent}">
+    <button type="button" class="btn btn-dark"><label for="firstName"> Enter the Student name</label></button>
+    <input type="text" th:field="*{firstName}" id="firstName"/>
+    <label for="email"> Enter the email </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <label for="lastName"> Enter the lastName </label>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
+    <label for="study_format"> Enter the lastName </label>
+    <input type="text" th:field="*{study_format}" id="study_format"/>
+
+    <br/>
+    <input type="submit" value="Update">
+
+</form>
+</body>
+</html>

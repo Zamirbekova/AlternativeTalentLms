@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit group </title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/group/{id}/edit (id=${modelEditGroup.getId()})}"
+th:object="${modelEditGroup}">
+    <button type="button" class="btn btn-dark"><label for="groupName"> Enter the group name</label></button>
+    <input type="text" th:field="*{groupName}" id="groupName"/>
+    <button type="button" class="btn btn-dark"> <label for="dateOfStart"> Enter the date of start </label></button>
+    <input type="text" th:field="*{dateOfStart}" id="dateOfStart"/>
+    <button type="button" class="btn btn-dark"> <label for="dateOfFinish"> Enter the date of finish </label></button>
+    <input type="text" th:field="*{dateOfFinish}" id="dateOfFinish"/>
+    <br/>
+    <input type="submit" value="Update">
+
+</form>
+</body>
+</html>
